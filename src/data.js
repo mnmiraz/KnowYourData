@@ -21,306 +21,100 @@ export const data = [
     },
     {
       id: "1",
-      question: "What kind of dog keeps the best time?",
-      answers: [`Watchdog`, `hotdog`],
-      variants: [`Watchdog`, `hotdog`, `Cutedog`]
+      question: "Why are they getting your info?",
+      answers: [`To sell you things you liked before`,
+                `To store information about you`,
+                `To attack your computer`,
+                `To sell your information`],
+      variants: [`To sell you things you liked before`,
+                `To have bad people go to your house`,
+                `To store information about you`,
+                `To attack your computer`,
+                `To sell your information to bad businessmen`,
+                `To sell your information`],
+      feedback: [``]
     },
     {
       id: "2",
       question:
-        "What time of day, when written in a capital letters, is the same forwards, backwards and upside down?",
+        "What’s your name? (We’re not stealing that from you!)",
       answer: "Noon",
-      variants: [`Morning`, `Noon`, `Evening`]
+      variants: [`Morning`, `Noon`, `Evening`],
+      feedback: [``]
     },
   
     {
       id: "3",
-      question: "What has a face and two hands but no arms or legs?",
+      question: "What's your date of birth? (We promise!)",
       answer: "Clock",
-      variants: [`Clock`, `Watch`, `Person`]
+      variants: [`Clock`, `Watch`, `Person`],
+      feedback: [``]
     },
     {
       id: "4",
       question:
-        "What five-letter word becomes shorter when you add two letters to it?",
+        "You are at home and bored. You remembered a game that a classmate was talking about and want to give it a try. Which websites would you choose to download the game from?",
       answer: "Short",
-      variants: [`Long`, `Short`, `Little`]
+      variants: [`Long`, `Short`, `Little`],
+      feedback: [`You got it right! Familiar names are often reliable. Always fact check with Google though. You can search “Is Steam a safe site?” for example.`,
+                 `This is an iffy choice. When you search “Is Wizard101 safe?” the first search that shows up is that it has malware. We will learn malwares later.`,
+                 `This is a terrible choice. Watch out for free stuff on the Internet. It’s often a trick for hackers to get you to click on their bad links. Be wary of typos!`]
     },
   
     {
       id: "5",
-      question: "What has a neck but no head?",
+      question: "Phew, you learned how to download safe games now. You opened the game and it’s time to register an account. Choose your username:",
       answer: "Bottle",
-      variants: [`Pan`, `Bottle`, `Plate`]
+      variants: [`Pan`, `Bottle`, `Plate`],
+      feedback: [`This is a big no no! You don’t want to use username that can link to your real-life name.`,
+                 `This is a safe username because it doesn’t reveal who you are. But it would be hard to remember, keep that in mind!`,
+                 `This is a big no no! You don’t want to use username that can link to your real-life name and date of birth.`,
+                 `This is a wise choice. Choose an username that is easy to remember but not giving ties to your identity.`]
     },
   
     {
       id: "6",
       question:
-        "What starts with a 'P', ends with an 'E' and has thousands of letters?",
+        "You’ve understood how to create a good username. Now, which password would you use?",
       answer: "Post Office",
-      variants: [`Letter`, `Envelope`, `Post Office`]
+      variants: [`Letter`, `Envelope`, `Post Office`],
+      feedback: [`This is very easy for bad people to steal your account. Don’t user personal information.`,
+                 `This is good practice. A long password with random words that make sense in your head would make it hard for people to guess.`,
+                 `This is a strong password, but don’t use your personal information.`,
+                 `This is a strong password, but it might be hard to remember.`,
+                 `Big no no! Too easy to guess.`]
     },
     {
       id: "7",
-      question: "What has to be broken before you can eat it?",
+      question: "Alright. Now you know your login information. But this is your 26th game account… How would you store the info so you don’t mistake it with the others? ",
       answer: "Egg",
-      variants: [`Bread`, `Banana`, `Egg`]
+      variants: [`Bread`, `Banana`, `Egg`],
+      feedback: [`Great. They will help you with storing it in a secure place.`,
+                 `Never share your password with anyone other than your parents.`,
+                 `Use a different password (and even username) for each account.`,
+                 `Ask your teachers or parents about this! Computer softwares are confusing, right?`]
     },
     {
       id: "8",
-      question: "What begins with T, ends with T and has T in it?",
+      question: "The game was so much fun. All the kids you talked to say that you should have a Facebook account to chat with them on their. Time to set up your account. Here are 2 versions of how you might do it. Which one is safer?",
       answer: "Teapot",
-      variants: [`Teapot`, `Teacup`, `Teatree`]
+      variants: [`Teapot`, `Teacup`, `Teatree`],
+      feedback: [`Cool! The Internet is not a safe place for you to share a lot of information about yourself.`,
+                 `Bad people can use your information to do a lot of things. In this case, they can show up to your school, pretend to be your uncle, and take you to a place with free ice cream and highlighters.`]
     },
     {
       id: "9",
-      question: "Teddy bears are never hungry because they are always what?",
+      question: "Now you have your account. You added your friends (after checking very carefully that they are not fake accounts.) Your friends are all posting pictures. Which one looks like it’s unsafe to be on the Internet?",
       answer: "Stuffed",
-      variants: [`Full`, `Stuffed`, `Sleep`]
+      variants: [`Full`, `Stuffed`, `Sleep`],
+      feedback: [`That’s right. If a bad person looks at this picture, they can tell which beach the students are at, and which school they go to (peep the ID cards!) `,
+                 `That’s right. If a bad person looks at this picture, they can tell what Miko’s family members look like, her name, and her age!`]
     },
     {
       id: "10",
-      question: "What belongs to you but others use it more than you do?",
+      question: "The end! You’ve learned a lot today!",
       answer: "Name",
       variants: [`Reputation`, `Name`, `Nickname`]
-    },
-    {
-      id: "11",
-      question: "The more you take aways, the larger it becomes? What is it?",
-      answer: "Hole",
-      variants: [`Money`, `knowledge`, `Hole`]
-    },
-    {
-      id: "12",
-      question: "What is full of holes, but can still hold a lot of water?",
-      answer: "Sponge",
-      variants: [`River`, `Sponge`, `Sea`]
-    },
-    {
-      id: "13",
-      question: "Where do fish keep their money?",
-      answer: "Riverbank",
-      variants: [`Pool`, `Riverbank`, `River`]
-    },
-    {
-      id: "14",
-      question:
-        "The more of them you take, the more you leave behind. What are they?",
-      answer: "Footsteps",
-      variants: [`Shadow`, `Footsteps`, `Footsprints`]
-    },
-    {
-      id: "15",
-      question: "What is that you will break everytime you name it?",
-      answer: "Silence",
-      variants: [`End`, `Silence`, `Stop`]
-    },
-  
-    {
-      id: "16",
-      question: "What flies without wings?",
-      answer: "Time",
-      variants: [`Airplane`, `Time`, `Insect`]
-    },
-    {
-      id: "17",
-      question: "What turns everything around, but does not move?",
-      answer: "Mirror",
-      variants: [`Wall`, `Mirror`, `Closet`]
-    },
-  
-    {
-      id: "18",
-      question: "What word looks the same upside down and backwards?",
-      answer: "Swims",
-      variants: [`Race`, `Swims`, `Now`]
-    },
-    {
-      id: "19",
-      question: "What kind of fish chases a mouse?",
-      answer: "Catfish",
-      variants: [`Catfish`, `Shark`, `Tuna`]
-    },
-  
-    {
-      id: "20",
-      question: "What's the difference between here and there?",
-      answer: "T",
-      variants: [`R`, `T`, `E`]
-    },
-  
-    {
-      id: "21",
-      question: "Take off my skin and I won't cry, but you will, What am I?",
-      answer: "Onion",
-      variants: [`Garlic`, `Carrot`, `Onion`]
-    },
-    {
-      id: "22",
-      question:
-        "What doesn't get any wetter, no matter how much rain falls on it?",
-      answer: "Water",
-      variants: [`Water`, `Rain`, `River`]
-    },
-    {
-      id: "23",
-      question: "What sits in a corner while traveling all around the world?",
-      answer: "Stamp",
-      variants: [`Letter`, `Stamp`, `Wall`]
-    },
-  
-    {
-      id: "24",
-      question: "What is round on both ends and hi in the middle?",
-      answer: "Ohio",
-      variants: [`Onion`, `Ohio`, `OMG`]
-    },
-    {
-      id: "25",
-      question: "What do you call a dog that sweats so much?",
-      answer: "Hotdog",
-      variants: [`Watchdog`, `Hotdog`, `Puppy`]
-    },
-  
-    {
-      id: "26",
-      question: "What rains at the north pole?",
-      answer: "Reindeer",
-      variants: [`Deer`, `Rain`, `Reindeer`]
-    },
-  
-    {
-      id: "27",
-      question:
-        "What body part is pronounced as one letter but written with three, only two different letters are used?",
-      answer: "Eye",
-      variants: [`Arm`, `Eye`, `Ear`]
-    },
-  
-    {
-      id: "28",
-      question:
-        "Feed me and I live, give me something to drink and i'll die, What am I?",
-      answer: "Fire",
-      variants: [`Light`, `Fire`, `Air`]
-    },
-  
-    {
-      id: "29",
-      question: "A shower that lights up the sky",
-      answer: "Meteor",
-      variants: [`Meteor`, `Rain`, `Star`]
-    },
-  
-    {
-      id: "30",
-      question: "Commits friendly home invasions one night a year",
-      answer: "Santa claus",
-      variants: [`Robber`, `Santa claus`, `Police`]
-    },
-    {
-      id: "31",
-      question: "What has a ring, but no finger?",
-      answer: "Telephone",
-      variants: [`Television`, `Telephone`, `Telegram`]
-    },
-  
-    {
-      id: "32",
-      question: "What is harder to catch the faster you run?",
-      answer: "Breath",
-      variants: [`Air`, `Breath`, `Fire`]
-    },
-    {
-      id: "33",
-      question: "What invention lets you look right through a wall?",
-      answer: "Window",
-      variants: [`Mirror`, `Window`, `Door`]
-    },
-  
-    {
-      id: "34",
-      question: "What is a witch's favorite school subject?",
-      answer: "Spelling",
-      variants: [`Reading`, `Spelling`, `Writing`]
-    },
-    {
-      id: "35",
-      question: "What is an aliens favourite sport?",
-      answer: "Spaceball",
-      variants: [`Football`, `Spaceball`, `Baseball`]
-    },
-    {
-      id: "36",
-      question: "What is the saddest fruit?",
-      answer: "Blueberry",
-      variants: [`Orange`, `Blueberry`, `Apple`]
-    },
-  
-    {
-      id: "37",
-      question: "What is easy to get into, and hard to get out of?",
-      answer: "Trouble",
-      variants: [`Cave`, `House`, `Trouble`]
-    },
-  
-    {
-      id: "38",
-      question:
-        "When you have me, you feel like sharing me. But, if you do share me, you don't have me. What am I?",
-      answer: "Secret",
-      variants: [`Money`, `Secret`, `Time`]
-    },
-  
-    {
-      id: "39",
-      question:
-        "It is an insect, and the first part of its name is the name of another insect. What is it?",
-      answer: "Beetle",
-      variants: [`Butterfly`, `Beetle`, `Bee`]
-    },
-    {
-      id: "40",
-      question:
-        "What english word retains the same pronunciation, even after you take away four of its five letters?",
-      answer: "Queue",
-      variants: [`Huge`, `Queue`, `Milk`]
-    },
-  
-    {
-      id: "41",
-      question:
-        "What word of five letters has only one left when two letters are removed?",
-      answer: "Stone",
-      variants: [`Hello`, `Stone`, `There`]
-    },
-    {
-      id: "42",
-      question: "How many 9's are there between 1 and 100?",
-      answer: "Twenty",
-      variants: [`Thirty`, `Fourty`, `Twenty`]
-    },
-    {
-      id: "43",
-      question: "Which vehicle is spelled the same forwards and backwards?",
-      answer: "Racecar",
-      variants: [`Bicycle`, `Airplane`, `Racecar`]
-    },
-    {
-      id: "44",
-      question:
-        "I am lighter than air but a million men cannot lift me up, What am I?",
-      answer: "Bubble",
-      variants: [`Mist`, `Bubble`, `Ballon`]
-    },
-  
-    {
-      id: "45",
-      question:
-        "What object has keys that open no locks, space but no room, and you can enter but not go in?",
-      answer: "Keyboard",
-      variants: [`Keyring`, `Keychain`, `Keyboard`]
     }
   ];
   
