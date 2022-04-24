@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Pangolin&display=swap");
 
+h1 {
+  font-size: 1.3em;
+  text-align: center;
+}
+
+input[type=text] {
+  font-size: 1.3em;
+  border: 2px solid #EAA756;
+  border-radius: 4px;
+  padding: 16px 32px;
+}
+
 body {
   background-color: #F5F5EA;
   font-family: "Pangolin", monospace;
