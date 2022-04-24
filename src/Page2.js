@@ -11,7 +11,7 @@ const handleOnClick = useCallback(() => {
 
   if (data && data.length > 0) {
       props.setBirthday(data)
-      navigate('/', { replace: true })
+      navigate('/question', { replace: true })
   } else {
       alert('birthday required!')
   }
