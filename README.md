@@ -21,5 +21,5 @@ New technologies, teamwork, and the fun of building a project!
 Improved UI and expand the game to multiple storylines 
 
 ## Links
-https://github.com/mnmiraz/KnowYourData \
+https://youtu.be/IjauecnbAgg \
 https://knowyourdata.mmiraz1.repl.co
