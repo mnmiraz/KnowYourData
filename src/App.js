@@ -7,12 +7,14 @@ import Question from './Question.js';
 import Page1 from './Page1.js';
 import Page2 from './Page2.js';
 import Home from './home.js';
+import logo from './images/logo.png';
 
 const Nav = (props) => {
   return (
 	    <div className="nav-bar"> 
             <nav>
 		        <NavLink to="/">Home</NavLink>
+                <NavLink to="/"><a href="" className="logo"><img className="logo" src={logo}></img></a></NavLink>
 		        <NavLink to="/question">Game</NavLink>
 	        </nav>
         </div>

@@ -17,10 +17,16 @@ body {
   font-family: "Pangolin", monospace;
 }
 
+.logo {
+  width: 24vw;
+  height: 10vh;
+}
+
 .nav-bar {
   color: #4496E4;
   text-align: center;
   width: 100vw;
+  font-size: 1.5em;
 }
 
 nav {
