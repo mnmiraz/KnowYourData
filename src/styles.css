@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 
 body {
-  background-color: #fef6e4;
+  background-color: #F5F5EA;
   font-family: "VT323", monospace;
 }
 
@@ -22,12 +22,12 @@ body {
 
 .correctAnswer {
   color: #fef6e4;
-  background: #8bd3dd;
+  background: #67D79B;
   padding: 1rem;
 }
 
 .correctAnswer:after {
-  background: #8bd3dd;
+  background: #67D79B;
   color: #001858;
   visibility: visible;
   position: relative;
@@ -37,13 +37,13 @@ body {
 }
 
 .incorrectAnswer {
-  background: #f582ae;
+  background: #DA6267;
   color: #fef6e4;
   padding: 1rem;
 }
 
 .incorrectAnswer:after {
-  background: #f582ae;
+  background: #DA6267;
   color: #001858;
   visibility: visible;
   position: relative;
