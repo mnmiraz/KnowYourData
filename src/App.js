@@ -9,6 +9,8 @@ import Page2 from './Page2.js';
 
 function App() {
     const [username, setUsername] = useState("")
+    const [dob, setBirthday] = useState("")
+    const [questionIndex, setQuestionIndex] = useState(0)
   return (
     <main>
       <Router>
@@ -18,13 +20,24 @@ function App() {
             // props drilling, bad because you have to drill all the way down 
             username={username} 
             setUsername={setUsername}
+            dob={dob} 
+            setBirthday={setBirthday}
             />} />
             <Route path="/q2" element={<Page2
             // props drilling, bad because you have to drill all the way down 
             username={username} 
             setUsername={setUsername}
+            dob={dob} 
+            setBirthday={setBirthday}
             />} />
-            <Route path="/" element={<Question />}/>
+            <Route path="/" element={<Question 
+            questionIndex={questionIndex} 
+            setQuestionIndex={setQuestionIndex}
+            username={username} 
+            setUsername={setUsername}
+            dob={dob} 
+            setBirthday={setBirthday}
+            />}/>
           </Routes>
         </div>
       </Router>

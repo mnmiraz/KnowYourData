@@ -5,12 +5,19 @@ body {
   font-family: "VT323", monospace;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
 .variant {
+  flex-grow: 1;
   cursor: pointer;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 8vh;
+  min-width: 100vh;
 }
 
 .correctAnswer {
@@ -43,4 +50,10 @@ body {
   width: 100%;
   height: 100%;
   content: "incorrect!";
+}
+
+img {
+  height: 50vh;
+  object-fit: cover;
+  vertical-align: bottom;
 }

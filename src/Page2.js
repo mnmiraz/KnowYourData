@@ -7,7 +7,15 @@ import React , {useState, useCallback}from 'react'
 function Page2(props) {
 const [data,setData]=useState(null)
 const navigate = useNavigate()
-const handleOnClick = useCallback(() => navigate('/', {replace: true}), [navigate])
+const handleOnClick = useCallback(() => {
+
+  if (data && data.length > 0) {
+      props.setBirthday(data)
+      navigate('/', { replace: true })
+  } else {
+      alert('birthday required!')
+  }
+});
 
   function getData(val)
   {
@@ -17,12 +25,9 @@ const handleOnClick = useCallback(() => navigate('/', {replace: true}), [navigat
 
   return (
     <div>
-     
-    <h1> {props.username}</h1>
        
-     <h1> Birthday? </h1>
+     <h1> What's your date of birth? (We promise!) </h1>
     <input type="text" onChange={getData} />
-    <button onClick={()=>props.setUsername(data)} >Print Data</button>
     <button onClick={handleOnClick}>Next Page</button>
 
     </div>

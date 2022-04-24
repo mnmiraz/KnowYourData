@@ -1,31 +1,32 @@
 import "./styles.css";
-import React, { useState } from "react";
-import { data } from "./data";
+import React, { useState, useEffect } from "react";
+import { dataSource } from "./data";
 import {
   Link
 } from 'react-router-dom';
 
 
-export default function Question() {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+export default function Question(props) {
+  // const [QuestionIndex, setQuestionIndex] = useState(0);
   const [myAnswer, setMyAnswer] = useState("");
   const [score, setScore] = useState(0);
   const [finish, setFinish] = useState(false);
   const [show, setShow] = useState(false);
   const [clickAnswer, setClickAnswer] = useState(false);
-
-  const checkAnswer = (variant) => {
+  const [data, setData] = useState(dataSource(props.username,props.dob));
+  const checkAnswer = (variant, i) => {
     setMyAnswer(variant);
     setClickAnswer(true);
+    data[props.questionIndex].feedback.length !== 0 && alert(data[props.questionIndex].feedback[i]);
   };
 
   const checkCorrectAnswer = () => {
-    if (data[currentQuestion].answers.includes(myAnswer)) {
+    if (data[props.questionIndex].answers.includes(myAnswer)) {
       setScore(score + 1);
     }
   };
 
-  const showAnswer = () => {
+  const showAnswer = (variantIndex) => {
     setShow((show) => !show); //better to be toggled like this
   };
   const reset = () => {
@@ -34,32 +35,35 @@ export default function Question() {
   };
 
   const finishHandler = () => {
-    if (currentQuestion === data.length - 1) {
+    if (props.questionIndex === data.length - 1) {
       setFinish(true);
     }
   };
 
   const startOver = () => {
-    setCurrentQuestion(0);
+    props.setQuestionIndex(0);
     setFinish(false);
     setMyAnswer("");
     setScore(0);
   };
+
+  useEffect(() => {
+    setData(dataSource(props.username, props.dob))
+  }, [props.username, props.dob]
+  )
 
   if (finish) {
     return (
       <div className="container m-4 p-4 mx-auto h-min-screen grid grid-rows-1 grid-cols-1 items-center">
         <div className="wrapper">
           <h3 className="m-4 p-2 h-30 text-center text-2xl font-bold">
-            {`Game Over! Your Final Score is
-            ${score}/${data.length - 1}
-            points.`}
+            {`The end! You've learned a lot today, woohoo!`}
           </h3>
           <button
             className="w-full h-14 mt-2 px-2 rounded-lg bg-gray-600 text-pink-400 font-bold hover:bg-gray-800 hover:text-pink-600"
             onClick={() => startOver()}
           >
-            Start Over
+            Let's Go Again!
           </button>
         </div>
       </div>
@@ -69,28 +73,31 @@ export default function Question() {
       <div className="container m-4 p-4 mx-auto h-min-screen grid grid-rows-1 grid-cols-1 items-center">
         <div className="wrapper">
           <h2 className="m-4 p-2 h-30 text-center text-2xl font-bold">
-            {data[currentQuestion].question}
+            {data[props.questionIndex].question}
           </h2>
           <span className="m-2 border-2 border-black mx-auto px-2 bg-gray-600 text-pink-400 rounded-lg text-center">
-            {`${currentQuestion}/${data.length - 1}`}
+            {`${props.questionIndex}/${data.length - 1}`}
           </span>
-          {data[currentQuestion].variants.map((variant) => (
-            <div className="m-2 h-14 border-2 border-black mx-auto text-center">
+          <div>
+          {data[props.questionIndex].variants.map((variant, i) => (
+            <div className="m-2 border-2 border-black mx-auto text-center">
               <p
                 key={variant.id}
                 className={`variant ${
                   myAnswer === variant
-                    ? data[currentQuestion].answers.includes(myAnswer)
+                    ? data[props.questionIndex].answers.includes(myAnswer)
                       ? "correctAnswer"
                       : "incorrectAnswer"
                     : null
                 }`}
-                onClick={() => checkAnswer(variant)}
+                onClick={() => checkAnswer(variant, i)}
               >
-                {variant}
+                {variant.includes(".png") ? <img src={variant}></img> : variant}
               </p>
             </div>
           ))}
+          </div>
+          
 
           {clickAnswer && (
             <button
@@ -102,41 +109,30 @@ export default function Question() {
           )}
           {show && (
             <p className="m-2 h-14 mx-auto text-center">
-              Correct Answer: {data[currentQuestion].answers}
+              Correct Answer: {data[props.questionIndex].answers}
             </p>
           )}
 
-          {/* {currentQuestion < data.length - 1 && (
-            <button
-              className="w-full h-14 mt-2 px-2 rounded-lg bg-gray-600 text-pink-400 font-bold hover:bg-gray-800 hover:text-pink-600"
-              onClick={() => {
-                setCurrentQuestion(currentQuestion + 1);
-                checkCorrectAnswer();
-                reset();
-              }}
-            >
-              NEXT
-            </button>
-          )} */}
-
-          {currentQuestion == 1 ? (
+          {props.questionIndex == 1 ? (
             <Link to="/q1">
               <button
               className="w-full h-14 mt-2 px-2 rounded-lg bg-gray-600 text-pink-400 font-bold hover:bg-gray-800 hover:text-pink-600"
-              // onClick={() => {
-                
-              // }}
+              onClick={() => {
+                props.setQuestionIndex(props.questionIndex + 1);
+                  checkCorrectAnswer();
+                  reset();
+              }}
             >
               NEXT
             </button>
             </Link>
           ) : (
-            currentQuestion < data.length - 1 ? 
+            props.questionIndex < data.length - 1 ? 
             (
               <button
                 className="w-full h-14 mt-2 px-2 rounded-lg bg-gray-600 text-pink-400 font-bold hover:bg-gray-800 hover:text-pink-600"
                 onClick={() => {
-                  setCurrentQuestion(currentQuestion + 1);
+                  props.setQuestionIndex(props.questionIndex + 1);
                   checkCorrectAnswer();
                   reset();
                 }}
@@ -146,7 +142,7 @@ export default function Question() {
             ) : (<span></span>)
           ) }
 
-          {currentQuestion === data.length - 1 && (
+          {props.questionIndex === data.length - 1 && (
             <button
               className="w-full h-14 mt-2 px-2 rounded-lg bg-gray-600 text-pink-400 font-bold hover:bg-gray-800 hover:text-pink-600"
               onClick={() => finishHandler()}

@@ -1,4 +1,12 @@
-export const data = [
+import q2v1 from "./images/q2v1.png";
+import q2v2 from "./images/q2v2.png";
+import q6v1 from "./images/q6v1.png";
+import q6v2 from "./images/q6v2.png";
+import q7v1 from "./images/q7v1.png";
+import q7v2 from "./images/q7v2.png";
+
+export const dataSource = (username, dob) => {
+  return [
     {
       id: "0",
       question: "Apps and websites can find out a lot about you. What do you think they can see?",
@@ -17,7 +25,7 @@ export const data = [
                 `How long you’re online`,
                 `What and whose stories you watch`,
                 `Your opinion about Lunchables`],
-      feedback: [``]
+      feedback: []
     },
     {
       id: "1",
@@ -32,40 +40,23 @@ export const data = [
                 `To attack your computer`,
                 `To sell your information to bad businessmen`,
                 `To sell your information`],
-      feedback: [``]
+      feedback: []
     },
     {
       id: "2",
       question:
-        "What’s your name? (We’re not stealing that from you!)",
-      answer: "Noon",
-      variants: [`Morning`, `Noon`, `Evening`],
-      feedback: [``]
-    },
-  
-    {
-      id: "3",
-      question: "What's your date of birth? (We promise!)",
-      answer: "Clock",
-      variants: [`Clock`, `Watch`, `Person`],
-      feedback: [``]
-    },
-    {
-      id: "4",
-      question:
         "You are at home and bored. You remembered a game that a classmate was talking about and want to give it a try. Which websites would you choose to download the game from?",
-      answer: "Short",
-      variants: [`Long`, `Short`, `Little`],
+      answers: [q2v1],
+      variants: [q2v1, q2v1],
       feedback: [`You got it right! Familiar names are often reliable. Always fact check with Google though. You can search “Is Steam a safe site?” for example.`,
-                 `This is an iffy choice. When you search “Is Wizard101 safe?” the first search that shows up is that it has malware. We will learn malwares later.`,
                  `This is a terrible choice. Watch out for free stuff on the Internet. It’s often a trick for hackers to get you to click on their bad links. Be wary of typos!`]
     },
   
     {
-      id: "5",
+      id: "3",
       question: "Phew, you learned how to download safe games now. You opened the game and it’s time to register an account. Choose your username:",
-      answer: "Bottle",
-      variants: [`Pan`, `Bottle`, `Plate`],
+      answers: [`skjhfalkw`,`northflowerrain!`],
+      variants: [username+`12345`, `skjhfalkw`, username+dob, `northflowerrain!`],
       feedback: [`This is a big no no! You don’t want to use username that can link to your real-life name.`,
                  `This is a safe username because it doesn’t reveal who you are. But it would be hard to remember, keep that in mind!`,
                  `This is a big no no! You don’t want to use username that can link to your real-life name and date of birth.`,
@@ -73,48 +64,42 @@ export const data = [
     },
   
     {
-      id: "6",
+      id: "4",
       question:
         "You’ve understood how to create a good username. Now, which password would you use?",
-      answer: "Post Office",
-      variants: [`Letter`, `Envelope`, `Post Office`],
-      feedback: [`This is very easy for bad people to steal your account. Don’t user personal information.`,
+      answers: [`stablehorsecorrectmilk!@`],
+      variants: [dob, `stablehorsecorrectmilk!@`, `01`+username+`1@!2_wow`, `E4gle5W1n6s`, `password`],
+      feedback: [`This is very easy for bad people to steal your account. Don’t use personal information.`,
                  `This is good practice. A long password with random words that make sense in your head would make it hard for people to guess.`,
                  `This is a strong password, but don’t use your personal information.`,
                  `This is a strong password, but it might be hard to remember.`,
                  `Big no no! Too easy to guess.`]
     },
     {
-      id: "7",
+      id: "5",
       question: "Alright. Now you know your login information. But this is your 26th game account… How would you store the info so you don’t mistake it with the others? ",
-      answer: "Egg",
-      variants: [`Bread`, `Banana`, `Egg`],
+      answers: [`Tell your parents`, `Use a password manager`],
+      variants: [`Tell your parents`, `Tell Becky, your classmate who has great memory`, `I don’t need to store the info. All my login info are the same!`, `Use a password manager`],
       feedback: [`Great. They will help you with storing it in a secure place.`,
                  `Never share your password with anyone other than your parents.`,
                  `Use a different password (and even username) for each account.`,
-                 `Ask your teachers or parents about this! Computer softwares are confusing, right?`]
+                 `Ask your teachers or parents about this! Software is confusing, right?`]
     },
     {
-      id: "8",
-      question: "The game was so much fun. All the kids you talked to say that you should have a Facebook account to chat with them on their. Time to set up your account. Here are 2 versions of how you might do it. Which one is safer?",
-      answer: "Teapot",
-      variants: [`Teapot`, `Teacup`, `Teatree`],
+      id: "6",
+      question: "The game was so much fun. All the kids you talked to say that you should have a Facebook account to chat with them on there. Time to set up your account. Here are 2 versions of how you might do it. Which one is safer?",
+      answers: [q6v1],
+      variants: [q6v1, q6v2],
       feedback: [`Cool! The Internet is not a safe place for you to share a lot of information about yourself.`,
                  `Bad people can use your information to do a lot of things. In this case, they can show up to your school, pretend to be your uncle, and take you to a place with free ice cream and highlighters.`]
     },
     {
-      id: "9",
+      id: "7",
       question: "Now you have your account. You added your friends (after checking very carefully that they are not fake accounts.) Your friends are all posting pictures. Which one looks like it’s unsafe to be on the Internet?",
-      answer: "Stuffed",
-      variants: [`Full`, `Stuffed`, `Sleep`],
+      answers: [q7v1, q7v2],
+      variants: [q7v1, q7v2],
       feedback: [`That’s right. If a bad person looks at this picture, they can tell which beach the students are at, and which school they go to (peep the ID cards!) `,
                  `That’s right. If a bad person looks at this picture, they can tell what Miko’s family members look like, her name, and her age!`]
-    },
-    {
-      id: "10",
-      question: "The end! You’ve learned a lot today!",
-      answer: "Name",
-      variants: [`Reputation`, `Name`, `Nickname`]
     }
   ];
-  
+}
