@@ -1,8 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pangolin&display=swap");
+
+h1 {
+  font-size: 1.3em;
+  text-align: center;
+}
+
+input[type=text] {
+  font-size: 1.3em;
+  border: 2px solid #EAA756;
+  border-radius: 4px;
+  padding: 16px 32px;
+}
 
 body {
-  background-color: #fef6e4;
-  font-family: "VT323", monospace;
+  background-color: #F5F5EA;
+  font-family: "Pangolin", monospace;
 }
 
 .nav-bar {
@@ -38,12 +50,12 @@ nav {
 
 .correctAnswer {
   color: #fef6e4;
-  background: #8bd3dd;
+  background: #67D79B;
   padding: 1rem;
 }
 
 .correctAnswer:after {
-  background: #8bd3dd;
+  background: #67D79B;
   color: #001858;
   visibility: visible;
   position: relative;
@@ -53,13 +65,13 @@ nav {
 }
 
 .incorrectAnswer {
-  background: #f582ae;
+  background: #DA6267;
   color: #fef6e4;
   padding: 1rem;
 }
 
 .incorrectAnswer:after {
-  background: #f582ae;
+  background: #DA6267;
   color: #001858;
   visibility: visible;
   position: relative;

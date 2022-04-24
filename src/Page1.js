@@ -23,13 +23,16 @@ function Page1(props) {
     }
 
     return (
-        <div>
+        <div className="container m-4 p-4 mx-auto h-min-screen grid grid-rows-1 grid-cols-1 items-center">
 
             <h1> {props.username}</h1>
 
             <h1> What’s your name? (We’re not stealing that from you!) </h1>
-            <input type="text" onChange={getData} />
-            <button onClick={handleOnClick}>Next Page</button>
+            <input 
+            type="text"
+            onChange={getData} />
+            <button className="w-100 h-14 mt-2 px-2 rounded-lg bg-gray-600 text-pink-400 font-bold hover:bg-gray-800 hover:text-pink-600"
+             onClick={handleOnClick}>Next</button>
 
         </div>
     );
